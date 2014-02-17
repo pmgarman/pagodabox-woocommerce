@@ -7,6 +7,10 @@ web1:
     - content/uploads/
     - content/cache/
     - content/w3tc-config/
+    - content/plugins/woocommerce/logs/
+    - content/uploads/woocommerce_uploads/
+  httpd_xsendfilepaths:
+    - content/uploads/woocommerce_uploads/
   cron:
     - "*/15 * * * *": "php wordpress/wp-cron.php"
   php_version: 5.4.14
@@ -14,6 +18,7 @@ web1:
     - mysql
     - mysqli
     - memcache
+    - soap
   php_upload_max_filesize: "8M"
   php_newrelic_framework: wordpress
   after_build:
